@@ -11,12 +11,15 @@ BUFFER_SIZE = 1024
 def handle_client(conn: socket.socket, addr: tuple[str, int]) -> None:
     with conn:
         print(f"[echo-server] Conexão de {addr}")
-        while True:
-            data = conn.recv(BUFFER_SIZE)
-            if not data:
-                print(f"[echo-server] Conexão encerrada por {addr}")
-                break
-            conn.sendall(data)
+        try:
+            while True:
+                data = conn.recv(BUFFER_SIZE)
+                if not data:
+                    print(f"[echo-server] Conexão encerrada por {addr}")
+                    break
+                conn.sendall(data)
+        except OSError as error:
+            print(f"[echo-server] Erro na conexão {addr}: {error}")
 
 
 def main() -> None:

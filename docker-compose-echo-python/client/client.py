@@ -32,7 +32,10 @@ def main() -> None:
                 print(f"[echo-client] Recebido: {response}")
 
                 if response != MESSAGE:
-                    raise RuntimeError("Resposta recebida difere da mensagem enviada.")
+                    raise RuntimeError(
+                        "Resposta recebida difere da mensagem enviada. "
+                        f"Esperado: {MESSAGE}. Recebido: {response}."
+                    )
                 return
         except OSError as error:
             print(
