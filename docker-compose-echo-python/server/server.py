@@ -26,7 +26,7 @@ def main() -> None:
 
         while True:
             conn, addr = sock.accept()
-            thread = threading.Thread(target=handle_client, args=(conn, addr), daemon=True)
+            thread = threading.Thread(target=handle_client, args=(conn, addr))
             thread.start()
 
 
