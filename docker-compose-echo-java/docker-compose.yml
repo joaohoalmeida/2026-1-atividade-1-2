@@ -1,0 +1,12 @@
+services:
+  echo-server:
+    build: ./server
+    container_name: echo-server
+    ports:
+      - "6789:6789"
+
+  echo-client:
+    build: ./client
+    container_name: echo-client
+    depends_on:
+      - echo-server
