@@ -56,14 +56,3 @@ echo-server    | Cliente 1 enviou: Cliente 2 - Testando: 1
 echo-server    | Cliente 2 enviou: Cliente 1 - Testando: 1
 ...
 ```
-
-## Material de Estudo
-
-| Arquivo | Conteúdo |
-|---------|----------|
-| [ESTUDO_INDEX.md](ESTUDO_INDEX.md) | Índice com links para todos os materiais |
-| [ESTUDO.md](ESTUDO.md) | Visão geral do projeto |
-| [ESTUDO_SERVER.md](ESTUDO_SERVER.md) | Detalhamento do `Server.java` |
-| [ESTUDO_SERVERTHREAD.md](ESTUDO_SERVERTHREAD.md) | Detalhamento do `ServerThread.java` |
-| [ESTUDO_CLIENT.md](ESTUDO_CLIENT.md) | Detalhamento dos clientes |
-| [ESTUDO_DOCKER.md](ESTUDO_DOCKER.md) | Detalhamento do Docker & Docker Compose |
