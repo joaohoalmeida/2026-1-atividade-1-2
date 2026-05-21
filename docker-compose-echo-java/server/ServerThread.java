@@ -21,8 +21,10 @@ public class ServerThread implements Runnable{
             
             out_socket.println("Bem-vindo ao servidor!");
 
-            String message = in_socket.readLine();
-            System.out.println("Cliente enviou: " + message);
+            String message;
+            while ((message = in_socket.readLine()) != null) {
+                System.out.println("Cliente " + clientNumber + " enviou: " + message);
+            }
 
             socket.close();
             System.out.println("Client " + clientNumber + " no endereco " + socket.getInetAddress() + " desconectou!");

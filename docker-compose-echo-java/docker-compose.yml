@@ -8,5 +8,13 @@ services:
   echo-client:
     build: ./client
     container_name: echo-client
+    command: ["java", "Client"]
+    depends_on:
+      - echo-server
+
+  echo-client-2:
+    build: ./client
+    container_name: echo-client-2
+    command: ["java", "Cliente_2"]
     depends_on:
       - echo-server
