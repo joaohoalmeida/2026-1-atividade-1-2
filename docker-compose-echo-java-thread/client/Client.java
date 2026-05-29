@@ -3,7 +3,9 @@ import java.net.Socket;
 
 public class Client {
 
-    Client() throws IOException{
+    String name;
+
+    Client(String name) throws IOException{
         
         Socket socket = new Socket("echo-server", 6789);
         System.out.println("Conectado ao servidor!");
@@ -16,7 +18,7 @@ public class Client {
 
         int i = 0;
         while (true){
-            out_socket.println("Cliente 1 - Testando: " + i++);
+            out_socket.println(name + " - Testando: " + i++);
             try { Thread.sleep(200); } catch (InterruptedException e) { e.printStackTrace(); }
             if (i == 10){ break; }
         }
@@ -28,8 +30,8 @@ public class Client {
 
     public static void main(String[] args){
         try{
-            new Client();
-
+            String name = args.length > 0 ? args[0] : "Cliente";
+            new Client(name);
         } catch (Exception e){
             e.printStackTrace();
         }

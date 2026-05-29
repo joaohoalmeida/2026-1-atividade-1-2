@@ -1,0 +1,20 @@
+services:
+  echo-server:
+    build: ./server-thread
+    container_name: echo-server
+    ports:
+      - "6789:6789"
+
+  echo-client:
+    build: ./client
+    container_name: echo-client
+    command: ["java", "Client", "Client 1"]
+    depends_on:
+      - echo-server
+
+  echo-client-2:
+    build: ./client
+    container_name: echo-client-2
+    command: ["java", "Client", "Client 2"]
+    depends_on:
+      - echo-server
